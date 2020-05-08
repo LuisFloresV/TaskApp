@@ -1,3 +1,7 @@
+html body {
+
+    background-color: #E8DED1;
+  }
 .navbar-brand {
     position: absolute;
     width: 100%;
@@ -6,3 +10,42 @@
     text-align: center;
     margin: auto;
 }
+
+.navbar-custom { 
+    background-color: #363636 
+} 
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+.center-column {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+.center-forms {
+    width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  .item-row {
+    background-color: #363636;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+  }

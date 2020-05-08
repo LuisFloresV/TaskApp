@@ -3,7 +3,8 @@ from .views import *
 
 
 urlpatterns = [
-    path('new/',TaskCreateNew.as_view(), name='task_new'), 
-    path('list/',TaskListView.as_view(), name='task_list'), 
-
+    path('list/',TaskCreateNew.as_view(), name='task_core'), 
+    path('<uuid:pk>/delete/', TaskDeleteView.as_view(), name='task_delete'),
+    path('<uuid:pk>/update/', TaskUpdateView.as_view(), name='task_update'),
     ]
+    

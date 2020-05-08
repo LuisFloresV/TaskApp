@@ -1,0 +1,34 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Tasks{% endblock title %}
+
+{% block content %}
+
+
+<div class="center-column">
+
+   <form action="" method="post">
+    {% csrf_token %} 
+    {{ form|crispy }} 
+    <input class="btn btn-info" type="submit" value="Create Task">
+    </form> 
+   
+    <div class="">
+        {% for task in tasks %}
+        <div class="item-row">
+            
+            {% if task.complete == True %}
+            Done :<strike> {{task.task}}</strike>
+            {%else%}
+            <span>{{task.task}}</span>
+            {%endif%}
+            <a class="btn btn-sm btn-info" href="{% url 'task_update' task.pk %}">Update</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'task_delete' task.pk %}">Delete</a>
+          </div>
+          {% endfor %}
+
+            
+        </div>
+</div> <br /> 
+
+ {% endblock content %}
