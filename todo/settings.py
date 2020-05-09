@@ -146,7 +146,8 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend', 
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 LOGIN_REDIRECT_URL = 'home' 
 LOGOUT_REDIRECT_URL = 'home'
@@ -157,5 +158,16 @@ ACCOUNT_USERNAME_REQUIRED = False # new
 ACCOUNT_AUTHENTICATION_METHOD = 'email' # new 
 ACCOUNT_EMAIL_REQUIRED = True # new 
 ACCOUNT_UNIQUE_EMAIL = True # new
-
+ACCOUNT_EMAIL_VERIFICATION ='mandatory'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT =3
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT =300
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+SENDGRID_API_KEY = os.getenv('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')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "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")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "naokodeveloper@gmail.com")

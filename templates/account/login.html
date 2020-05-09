@@ -6,7 +6,13 @@
 <div class="center-forms">
 <h2>Log In</h2>
 <form method="post">
-  {% csrf_token %} {{ form|crispy }}<button class="btn btn-success" type="submit">Login</button> 
+  {% csrf_token %} {{ form|crispy }}
+  <center><button class="btn btn-success" type="submit">Login</button> </center>
 </form>
+
+
+<center><a href="{% url 'account_reset_password' %}" >Forgot your password?</a></center>
+<br>
+<center>New to To-do-App? <a href="{% url 'account_signup' %}" >Sign up</a></center>
 </div>
 {% endblock content %}

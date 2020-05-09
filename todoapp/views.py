@@ -4,6 +4,8 @@ from django.urls import reverse_lazy # new
 from .models import Task
 from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixin
 import uuid
+from allauth.account.views import PasswordChangeView as allauth_PasswordChangeView
+from django.urls import reverse_lazy
 
 class TaskCreateNew(LoginRequiredMixin,CreateView):
     model = Task
@@ -50,3 +52,9 @@ class TaskUpdateView(LoginRequiredMixin,UpdateView):
          if obj.created_by != self.request.user: 
              raise PermissionDenied 
          return super().dispatch(request, *args, **kwargs)
+
+
+
+
+class PasswordChangeView(allauth_PasswordChangeView):
+    success_url = reverse_lazy('home')
