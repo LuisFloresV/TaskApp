@@ -25,8 +25,22 @@ SECRET_KEY = 'zr$@w#&c!u9#_e4-r4n5pgl722u9g#^onh-avzaxmh#g*y+)s+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ENVIRONMENT = 'development'
 
+if ENVIRONMENT == 'production': 
+    SECURE_BROWSER_XSS_FILTER = True # new
+    X_FRAME_OPTIONS = 'DENY' # new
+    SECURE_SSL_REDIRECT = True 
+    SECURE_HSTS_SECONDS = 3600 # new 
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True # new 
+    SECURE_HSTS_PRELOAD = True # new 
+    SECURE_CONTENT_TYPE_NOSNIFF = True # new
+    SESSION_COOKIE_SECURE = True # new 
+    CSRF_COOKIE_SECURE = True # new
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    DEBUG = False
+
+ALLOWED_HOSTS = ['peaceful-beach-08145.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -52,6 +66,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

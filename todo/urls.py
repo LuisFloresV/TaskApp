@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('accounts/',include('allauth.urls')),
     path('tasks/',include('todoapp.urls')),
+
 ]
