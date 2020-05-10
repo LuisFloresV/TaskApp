@@ -25,7 +25,7 @@ SECRET_KEY = 'zr$@w#&c!u9#_e4-r4n5pgl722u9g#^onh-avzaxmh#g*y+)s+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ENVIRONMENT = 'development'
+ENVIRONMENT = 'production'
 
 if ENVIRONMENT == 'production': 
     SECURE_BROWSER_XSS_FILTER = True # new
