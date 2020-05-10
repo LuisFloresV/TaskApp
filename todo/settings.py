@@ -40,7 +40,7 @@ if ENVIRONMENT == 'production':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     DEBUG = False
 
-ALLOWED_HOSTS = ['peaceful-beach-08145.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['https://taskdoapp.herokuapp.com/', 'localhost', '127.0.0.1']
 
 # Application definition
 
