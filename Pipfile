@@ -10,6 +10,7 @@ django = "==3.0.5"
 gunicorn = "==19.9.0"
 whitenoise = "*"
 django-allauth = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.8"
